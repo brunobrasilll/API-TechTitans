@@ -14,7 +14,9 @@ import br.com.fiap.techtitansapi.modelos.Alimento;
 import br.com.fiap.techtitansapi.modelos.Distribuidor;
 import br.com.fiap.techtitansapi.modelos.Fazenda;
 import br.com.fiap.techtitansapi.modelos.Nutricao;
+import br.com.fiap.techtitansapi.modelos.Usuario;
 import br.com.fiap.techtitansapi.servico.ServicoAlimento;
+import br.com.fiap.techtitansapi.servico.ServicoCadastro;
 import br.com.fiap.techtitansapi.servico.ServicoDistribuidor;
 import br.com.fiap.techtitansapi.servico.ServicoFazenda;
 import br.com.fiap.techtitansapi.servico.ServicoNutricao;
@@ -35,6 +37,37 @@ public class Controle {
     @Autowired
     private ServicoNutricao servicoNutricao;
 
+    @Autowired
+    private ServicoCadastro servicoCadastro;
+
+    // Cadastro de Usuario
+    @GetMapping("/usuario")
+    public ResponseEntity<?> selecionarUsuario() {
+        return servicoCadastro.selecionarUsuario();
+    }
+
+    @GetMapping("/usuario/{id}")
+    public ResponseEntity<?> selecionarPorIdUsuario(@PathVariable int id) {
+        return servicoCadastro.selecionarPeloIdUsuario(id);
+    }
+    
+    @PostMapping("/usuario")
+    public ResponseEntity<?> cadastrarUsuario(@Valid @RequestBody Usuario obj){
+        return servicoCadastro.cadastrarUsuario(obj);
+    }
+
+    @PutMapping("/usuario")
+    public ResponseEntity<?> editarUsuario(@RequestBody Usuario obj){
+        return servicoCadastro.editarUsuario(obj);
+    }
+
+    @DeleteMapping("/usuario/{id}")
+    public ResponseEntity<?> removerUsuario(@PathVariable int id){
+        return servicoCadastro.removerUsuario(id);
+    }
+
+
+    // Alimentos
     @GetMapping("/alimento")
     public ResponseEntity<?> selecionar() {
         return servicoAlimento.selecionar();
