@@ -30,7 +30,7 @@ public class Fazenda {
 
 
     @ManyToOne
-    @JoinColumn(name = "distribuidor_id")
+    @JoinColumn(name = "id_distribuidor")
     private Distribuidor distribuidor;
     
     //Get e Set

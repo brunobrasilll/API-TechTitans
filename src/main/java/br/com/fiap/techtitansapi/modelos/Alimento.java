@@ -33,15 +33,15 @@ public class Alimento {
     private Date data;
 
     @OneToOne
-    @JoinColumn(name = "nutricao_id")
+    @JoinColumn(name = "id_nutricao")
     private Nutricao nutricao;
 
     @ManyToOne
-    @JoinColumn(name = "fazenda_id")
+    @JoinColumn(name = "id_fazenda")
     private Fazenda fazenda;
 
     @ManyToOne
-    @JoinColumn(name = "distribuidor_id")
+    @JoinColumn(name = "id_distribuidor")
     private Distribuidor distribuidor;
 
     //Getters e Setters

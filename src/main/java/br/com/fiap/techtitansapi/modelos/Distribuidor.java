@@ -25,7 +25,7 @@ public class Distribuidor {
     private String contatoDistribuidor;
 
     @OneToMany
-    @JoinColumn(name = "fazenda_id")
+    @JoinColumn(name = "id_fazenda")
     private Fazenda fazenda;
 
     //Get e Set
