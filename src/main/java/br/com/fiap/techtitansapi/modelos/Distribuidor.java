@@ -4,6 +4,8 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import jakarta.validation.constraints.NotBlank;
 
@@ -21,6 +23,10 @@ public class Distribuidor {
     private String enderecoDistribuidor;
     @NotBlank(message = "Digite o contato do distribuidor!")
     private String contatoDistribuidor;
+
+    @OneToMany
+    @JoinColumn(name = "fazenda_id")
+    private Fazenda fazenda;
 
     //Get e Set
     public int getId() {

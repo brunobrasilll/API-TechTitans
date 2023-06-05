@@ -1,9 +1,12 @@
 package br.com.fiap.techtitansapi.modelos;
 
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 import jakarta.validation.constraints.NotBlank;
 
@@ -24,7 +27,11 @@ public class Fazenda {
     
     @NotBlank(message = "Digite o contato da Fazenda!")
     private String contatoFazenda;
-    
+
+
+    @ManyToOne
+    @JoinColumn(name = "distribuidor_id")
+    private Distribuidor distribuidor;
     
     //Get e Set
     public int getId() {

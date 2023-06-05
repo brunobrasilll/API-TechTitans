@@ -6,6 +6,9 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 import jakarta.validation.constraints.NotBlank;
 
@@ -28,6 +31,18 @@ public class Alimento {
     @NotBlank(message = "Digite a origem do produto!")
     private String origem;
     private Date data;
+
+    @OneToOne
+    @JoinColumn(name = "nutricao_id")
+    private Nutricao nutricao;
+
+    @ManyToOne
+    @JoinColumn(name = "fazenda_id")
+    private Fazenda fazenda;
+
+    @ManyToOne
+    @JoinColumn(name = "distribuidor_id")
+    private Distribuidor distribuidor;
 
     //Getters e Setters
     public String getNome() {
