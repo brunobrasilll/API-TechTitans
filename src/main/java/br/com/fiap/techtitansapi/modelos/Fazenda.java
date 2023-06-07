@@ -29,9 +29,6 @@ public class Fazenda {
     private String contatoFazenda;
 
 
-    @ManyToOne
-    @JoinColumn(name = "id_distribuidor")
-    private Distribuidor distribuidor;
     
     //Get e Set
     public int getId() {

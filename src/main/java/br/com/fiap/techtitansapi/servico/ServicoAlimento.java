@@ -24,6 +24,15 @@ public class ServicoAlimento {
         if(obj.getNome().equals("")){
             mensagem.setMensagem("O nome precisa ser preenchido");;
             return new ResponseEntity<>(mensagem, HttpStatus.BAD_REQUEST);
+        }else if(obj.getCategoria().equals("")){
+            mensagem.setMensagem("A categoria precisa ser preenchida");
+            return new ResponseEntity<>(mensagem, HttpStatus.BAD_REQUEST);
+        }else if(obj.getDescricao().equals("")){
+            mensagem.setMensagem("A descrição precisa ser preenchida");
+            return new ResponseEntity<>(mensagem, HttpStatus.BAD_REQUEST);
+        }else if(obj.getOrigem().equals("")){
+            mensagem.setMensagem("A origem precisa ser preenchida");
+            return new ResponseEntity<>(mensagem, HttpStatus.BAD_REQUEST);
         }else{
             return new ResponseEntity<>(acao.save(obj), HttpStatus.CREATED);
         }

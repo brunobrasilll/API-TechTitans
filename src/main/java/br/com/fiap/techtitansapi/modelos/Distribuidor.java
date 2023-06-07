@@ -24,10 +24,7 @@ public class Distribuidor {
     @NotBlank(message = "Digite o contato do distribuidor!")
     private String contatoDistribuidor;
 
-    @OneToMany
-    @JoinColumn(name = "id_fazenda")
-    private Fazenda fazenda;
-
+    
     //Get e Set
     public int getId() {
         return this.id;

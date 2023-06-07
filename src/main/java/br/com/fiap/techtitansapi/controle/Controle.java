@@ -79,7 +79,7 @@ public class Controle {
     }
     
     @PostMapping("/alimento")
-    public ResponseEntity<?> cadastrar(@Valid @RequestBody Alimento obj){
+    public ResponseEntity<?> cadastrar(@RequestBody Alimento obj){
         return servicoAlimento.cadastrar(obj);
     }
 
