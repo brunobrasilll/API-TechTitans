@@ -51,6 +51,14 @@ public class ServicoDistribuidor {
         }
     }
 
+    public ResponseEntity<?> ordernarPorNomeDistribuidor(){
+        return new ResponseEntity<>(acao.findByOrderByNomeDistribuidor(), HttpStatus.OK);
+    }
+
+    public ResponseEntity<?> ordernarPorEnderecoDistribuidor(){
+        return new ResponseEntity<>(acao.findByOrderByEnderecoDistribuidor(), HttpStatus.OK);
+    }
+
     //Metodo para editar dados
     public ResponseEntity<?> editarDistribuidor(Distribuidor obj){
 

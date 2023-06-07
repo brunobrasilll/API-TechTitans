@@ -51,6 +51,14 @@ public class ServicoFazenda {
         }
     }
 
+    public ResponseEntity<?> ordernarPorNomeFazenda(){
+        return new ResponseEntity<>(acao.findByOrderByNomeFazenda(), HttpStatus.OK);
+    }
+
+    public ResponseEntity<?> ordernarPorEnderecoFazenda(){
+        return new ResponseEntity<>(acao.findByOrderByEnderecoFazenda(), HttpStatus.OK);
+    }
+
     //Metodo para editar dados
     public ResponseEntity<?> editarFazenda(Fazenda obj){
 

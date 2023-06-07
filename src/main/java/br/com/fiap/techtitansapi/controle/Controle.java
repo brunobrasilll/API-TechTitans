@@ -77,6 +77,16 @@ public class Controle {
     public ResponseEntity<?> selecionarPorId(@PathVariable int id) {
         return servicoAlimento.selecionarPeloId(id);
     }
+
+    @GetMapping("/alimento/sortByNome")
+    public ResponseEntity<?> ordernarPorNome() {
+        return servicoAlimento.ordernarPorNome();
+    }
+
+    @GetMapping("/alimento/sortByData")
+    public ResponseEntity<?> ordernarPorData() {
+        return servicoAlimento.ordernarPorData();
+    }
     
     @PostMapping("/alimento")
     public ResponseEntity<?> cadastrar(@RequestBody Alimento obj){
@@ -103,6 +113,16 @@ public class Controle {
     public ResponseEntity<?> selecionarPorIdFazenda(@PathVariable int id) {
         return servicoFazenda.selecionarPeloIdFazenda(id);
     }
+
+    @GetMapping("/fazenda/sortByNomeFazenda")
+    public ResponseEntity<?> ordernarPorNomeFazenda() {
+        return servicoFazenda.ordernarPorNomeFazenda();
+    }
+
+    @GetMapping("/fazenda/sortByEnderecoFazenda")
+    public ResponseEntity<?> ordernarPorEnderecoFazenda() {
+        return servicoFazenda.ordernarPorEnderecoFazenda();
+    }
     
     @PostMapping("/fazenda")
     public ResponseEntity<?> cadastrarFazenda(@Valid @RequestBody Fazenda obj){
@@ -128,6 +148,16 @@ public class Controle {
     @GetMapping("/distribuidor/{id}")
     public ResponseEntity<?> selecionarPorIdDistribuidor(@PathVariable int id) {
         return servicoDistribuidor.selecionarPeloIdDistribuidor(id);
+    }
+
+    @GetMapping("/distribuidor/sortByNomeDistribuidor")
+    public ResponseEntity<?> ordernarPorNomeDistribuidor() {
+        return servicoDistribuidor.ordernarPorNomeDistribuidor();
+    }
+
+    @GetMapping("/distribuidor/sortByEnderecoDistribuidor")
+    public ResponseEntity<?> ordernarPorEnderecoDistribuidor() {
+        return servicoDistribuidor.ordernarPorEnderecoDistribuidor();
     }
     
     @PostMapping("/distribuidor")

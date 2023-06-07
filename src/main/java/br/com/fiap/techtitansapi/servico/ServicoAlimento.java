@@ -54,6 +54,14 @@ public class ServicoAlimento {
         }
     }
 
+    public ResponseEntity<?> ordernarPorNome(){
+        return new ResponseEntity<>(acao.findByOrderByNome(), HttpStatus.OK);
+    }
+
+    public ResponseEntity<?> ordernarPorData(){
+        return new ResponseEntity<>(acao.findByOrderByData(), HttpStatus.OK);
+    }
+
     //Metodo para editar dados
     public ResponseEntity<?> editar(Alimento obj){
 

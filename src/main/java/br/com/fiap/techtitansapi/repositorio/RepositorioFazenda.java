@@ -12,6 +12,9 @@ public interface RepositorioFazenda extends CrudRepository<Fazenda, Integer> {
     List<Fazenda> findAll();
     Fazenda findByid(int id);
     int countByid(int id);
+
+    public List<Fazenda> findByOrderByNomeFazenda();
+    public List<Fazenda> findByOrderByEnderecoFazenda();
 }
 
 

@@ -18,7 +18,7 @@ public class ServicoCadastro {
     @Autowired
     private RepositorioCadastro acao;
 
-    //Metodo para Cadastrar novo Alimento, Fazenda, Distribuidor.
+    //Metodo para Cadastrar novo
     public ResponseEntity<?> cadastrarUsuario(Usuario obj){
         
         if(obj.getEmail().equals("")){

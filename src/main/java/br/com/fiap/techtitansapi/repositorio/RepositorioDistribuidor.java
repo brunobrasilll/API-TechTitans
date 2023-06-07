@@ -12,4 +12,7 @@ public interface RepositorioDistribuidor extends CrudRepository<Distribuidor, In
     List<Distribuidor> findAll();
     Distribuidor findByid(int id);
     int countByid(int id);
+
+    public List<Distribuidor> findByOrderByNomeDistribuidor();
+    public List<Distribuidor> findByOrderByEnderecoDistribuidor();
 }

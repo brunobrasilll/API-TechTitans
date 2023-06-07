@@ -12,6 +12,9 @@ public interface RepositorioAlimento extends CrudRepository<Alimento, Integer> {
     List<Alimento> findAll();
     Alimento findByid(int id);
     int countByid(int id);
+
+    public List<Alimento> findByOrderByData();
+    public List<Alimento> findByOrderByNome();
 }
 
 
