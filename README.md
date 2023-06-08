@@ -12,3 +12,9 @@ GRUPO TECH TITANS- 2TDSPG - Manhã
 
 
 Procedimentos da API estão dentro do PDF
+
+Link dos videos: 
+
+Digital Business: https://youtu.be/uLjGUp_thg8
+
+Enterprise Application: https://youtu.be/H_ulQ3QG_5o
